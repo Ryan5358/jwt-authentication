@@ -1,0 +1,5 @@
+{
+  "watch": ["src", "../shared", "tsconfig.base.json"],
+  "ext": "ts, json, mjs",
+  "exec": "npm run config && tsx src/."
+}

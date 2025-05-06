@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "baseUrl": "../shared",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "paths": {
+      "@shared-constants/*": ["../shared/constants/*"],
+      "@shared-libs/*": ["../shared/libs/*"],
+      "@shared-middlewares/*": ["../shared/middlewares/*"],
+      "@shared-models/*": ["../shared/models/*"],
+      "@shared-repositories/*": ["../shared/repositories/*"],
+      "@shared-types/*": ["../shared/types/*"],
+      "@shared-utils/*": ["../shared/utils/*"],
+      "@shared-validators/*": ["../shared/validators/*"],
+      "@shared/*": ["../shared/*"],
+      "global/*": ["../*"]
+    },
+    "rootDir": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

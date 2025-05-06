@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "baseUrl": "./",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "paths": {
+      "@constants/*": ["./src/constants/*"],
+      "@controllers/*": ["./src/controllers/*"],
+      "@libs/*": ["./src/libs/*"],
+      "@middlewares/*": ["./src/middlewares/*"],
+      "@models/*": ["./src/models/*"],
+      "@repositories/*": ["./src/repositories/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@services/*": ["./src/services/*"],
+      "@_types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@validators/*": ["./src/validators/*"],
+      "@/*": ["./src/*"],
+      "@shared-constants/*": ["../shared/constants/*"],
+      "@shared-libs/*": ["../shared/libs/*"],
+      "@shared-middlewares/*": ["../shared/middlewares/*"],
+      "@shared-models/*": ["../shared/models/*"],
+      "@shared-repositories/*": ["../shared/repositories/*"],
+      "@shared-types/*": ["../shared/types/*"],
+      "@shared-utils/*": ["../shared/utils/*"],
+      "@shared-validators/*": ["../shared/validators/*"],
+      "@shared/*": ["../shared/*"],
+      "global/*": ["../*"]
+    },
+    "outDir": "dist",
+    "rootDir": "../",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts", "../shared/**/*"],
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

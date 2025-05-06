@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "baseUrl": "../shared",
+        "target": "ESNext",
+        "moduleResolution": "Node",
+        "paths": {
+        },
+        "rootDir": "./",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    },
+    "include": ["./**/*.ts"],
+    "exclude": ["node_modules", "**/node_modules/*"]
+}

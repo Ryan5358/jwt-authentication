@@ -1,0 +1,12 @@
+{
+    "@shared-constants/*": ["../shared/constants/*"],
+    "@shared-libs/*": ["../shared/libs/*"],
+    "@shared-middlewares/*": ["../shared/middlewares/*"],
+    "@shared-models/*": ["../shared/models/*"],
+    "@shared-repositories/*": ["../shared/repositories/*"],
+    "@shared-types/*": ["../shared/types/*"],
+    "@shared-utils/*": ["../shared/utils/*"],
+    "@shared-validators/*": ["../shared/validators/*"],
+    "@shared/*": ["../shared/*"],
+    "global/*": ["../*"]
+}

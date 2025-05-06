@@ -1,0 +1,42 @@
+services:
+  redis-server:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  serverless-redis-http:
+    image: hiett/serverless-redis-http:latest
+    ports:
+      - "8079:80"
+    environment:
+      SRH_MODE: env
+      SRH_TOKEN: dev_token
+      SRH_CONNECTION_STRING: "redis://redis-server:6379"
+
+  auth-mysql-rdbms:
+    image: mysql:latest
+    ports:
+      - "${AUTH_MYSQL_PORT}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${AUTH_MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${AUTH_MYSQL_DATABASE}
+      MYSQL_USER: ${AUTH_MYSQL_USER}
+      MYSQL_PASSWORD: ${AUTH_MYSQL_PASSWORD}
+    volumes:
+      - auth-mysql-rdbms-data:/var/lib/mysql  # Persist MySQL data
+
+  auth-phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: auth-mysql-rdbms
+      PMA_PORT: 3306
+      PMA_USER: ${AUTH_MYSQL_USER}
+      PMA_PASSWORD: ${AUTH_MYSQL_PASSWORD}
+      PMA_CONTROLUSER: root
+      PMA_CONTROLPASS: ${AUTH_MYSQL_ROOT_PASSWORD}
+
+volumes:
+  auth-mysql-rdbms-data:   # Declare volume for MySQL persistence
